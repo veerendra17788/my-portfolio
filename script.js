@@ -62,10 +62,11 @@ particlesJS('particles-js', { //particles effect
 /* Typing and Deleting Effect */
 // List of sentences
 var _CONTENT = [ 
-	"SOFTWARE ENGINEER", 
+	"DATA ENGINEER",
+	"SOFTWARE ENGINEER",
 	"WEB DEVELOPER",
-    "OPEN SOURCE CONTRIBUTOR",
-    "CODER"
+	"OPEN SOURCE CONTRIBUTOR",
+	"CODER"
 ];
 
 var _PART = 0; // Current sentence being processed
@@ -96,38 +97,40 @@ function Type() {
 
 const skillsByCategory = {
 	frontend: [
-	  { name: "HTML", percent: 95 },
-	  { name: "CSS", percent: 93 },
-	  { name: "JavaScript", percent: 94 },
-	  { name: "React", percent: 87 },
+		{ name: "HTML", percent: 95 },
+		{ name: "CSS", percent: 93 },
+		{ name: "JavaScript", percent: 94 },
+		{ name: "React", percent: 87 },
 	],
 	backend: [
-	  { name: "Node.js", percent: 90 },
-	  { name: "Express", percent: 85 },
-	  { name: "MongoDB", percent: 80 },
-	  { name: "MySQL", percent: 85 },
-	  { name: "Postgres", percent: 75 },
-	],
-	ml: [
-	  { name: "Python", percent: 80 },
-	  { name: "Scikit-learn", percent: 60 },
-	  { name: "Pandas/Numpy", percent: 70 },
-	  { name: "Matplotlib", percent: 60 },
+		{ name: "Node.js", percent: 90 },
+		{ name: "Express", percent: 85 },
+		{ name: "MongoDB", percent: 80 },
+		{ name: "MySQL", percent: 85 },
+		{ name: "Postgres", percent: 75 },
 	],
 	soft: [
-	  { name: "Communication", percent: 85 },
-	  { name: "Teamwork", percent: 90 },
-	  { name: "Time Management", percent: 80 },
-	  { name: "Leadership", percent: 89 },
+		{ name: "Communication", percent: 85 },
+		{ name: "Teamwork", percent: 90 },
+		{ name: "Time Management", percent: 80 },
+		{ name: "Leadership", percent: 89 },
 	],
 	others: [
-	  { name: "Git & GitHub", percent: 80 },
-	  { name: "C / C++", percent: 85 },
-	  { name: "Docker", percent: 85 },
-	  { name: "Figma", percent: 83 },
-	  { name: "Canva", percent: 89 },
+		{ name: "Git & GitHub", percent: 80 },
+		{ name: "Docker", percent: 70 },
+		{ name: "Figma", percent: 68 },
+		{ name: "Canva", percent: 66 },
+	],
+	data: [
+		{ name: "Databases (SQL Server)", percent: 90 },
+		{ name: "Big Data", percent: 82 },
+		{ name: "Spark / PySpark", percent: 88 },
+		{ name: "Databricks", percent: 78 },
+		{ name: "Python", percent: 90 },
+		{ name: "SQL", percent: 92 },
+		{ name: "C++", percent: 72 },
 	]
-  };
+};
   
   function renderSkills(category) {
 	const skillsContainer = document.getElementById("skills-container");
@@ -162,8 +165,9 @@ const skillsByCategory = {
 	});
   });
   
-  // Load default
-  renderSkills("frontend");
+// Load default (show Data Engineer / others first)
+// Default to Data Engineering skills
+renderSkills("data");
   
 // Implements deleting effect
 function Delete() {
